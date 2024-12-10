@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,20 +15,26 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container text-center">
-      <button class="btn btn-primary mt-3" id="boton-generar">
-        Genera carta
-      </button>
       <div class="card" id="card">
         <div class="palo top-left" id="palo-arriba">palo</div>
         <div class="numero center" id="numero-centro">num</div>
-        <div class="palo bottom-right " id="palo-abajo">palo</div>
+        <div class="palo bottom-right" id="palo-abajo">palo</div>
       </div>
-      <input type="text" id="ancho-carta" placeholder="Ancho de la carta" />;
-      <input type="text" id="alto-carta" placeholder="Alto de la carta" />
+      <button class="btn btn-primary mt-3" id="boton-generar">
+        Generar carta
+      </button>
+      <div class="mt-3">
+        <input type="text" id="ancho-carta" placeholder="Ancho de la carta" />
+        <input type="text" id="alto-carta" placeholder="Alto de la carta" />
+        <button class="btn btn-secondary mt-1" id="ajustar-dimensiones">
+          Ajustar Dimensiones
+        </button>
+      </div>
     </div>
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
