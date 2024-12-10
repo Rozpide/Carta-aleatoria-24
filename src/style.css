@@ -37,6 +37,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* aplico sombra, esquinas redondeadas, borde visible 1px*/
+#alto-carta,
+#ancho-carta,
+#ajustar-dimensiones,
+#boton-generar {
+  box-shadow: 7px 8px 5px black;
+  border-radius: 10px;
+  border: 1px solid black;
+}
 /*estilos aplicados a cartaDiv. Clase generada aleatoriamente*/
 .corazon,
 .diamante {
