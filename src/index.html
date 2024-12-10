@@ -3,16 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador de Cartas</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    
+    <div class="container text-center">
+      <div class="card" id="card">
+        <div class="palo top-left" id="palo-arriba">palo</div>
+        <div class="numero center" id="numero-centro">num</div>
+        <div class="palo bottom-right " id="palo-abajo">palo</div>
+      </div>
+      <button class="btn btn-primary mt-3" id="boton-generar">
+        Genera carta
+      </button>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>

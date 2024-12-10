@@ -1,1 +1,47 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: forestgreen;
+}
+.card {
+  width: 300px;
+  height: 450px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: white;
+  margin: 20px auto;
+}
+.numero,
+.palo {
+  position: absolute;
+  font-size: 8em;
+}
+.numero {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.top-left {
+  top: 0px;
+  left: 10px;
+}
+.bottom-right {
+  bottom: 0px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.corazon,
+.diamante {
+  color: red;
+}
+.pica,
+.trebol {
+  color: black;
+}
