@@ -1,25 +1,37 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-//se ejecuta la funcion al cargar la pagina
-window.onload = function() {
-  //llamamos a la funcion generarCarta para mostrar una carta al cargar
 
+// Se ejecuta la función al cargar la página
+window.onload = function() {
+  // Llamamos a la función generarCarta para mostrar una carta al cargar
   generarCarta();
-  // añado un evento al boton con id "boton-generar" para obtener una carta al click
+
+  // Añadimos un evento al botón con ID "boton-generar" para generar una carta al hacer clic
   document
     .getElementById("boton-generar")
-    .addEventListener("click", generarCarta);
+    .addEventListener("click", function() {
+      generarCarta();
+      ajustarDimensiones(); // Ajustar las dimensiones después de generar una carta nueva
+    });
+
+  // Añadimos un evento al botón con ID "ajustar-dimensiones" para ajustar las dimensiones al hacer clic
+  document
+    .getElementById("ajustar-dimensiones")
+    .addEventListener("click", ajustarDimensiones);
+
+  // Configuramos un temporizador para generar una nueva carta cada 10 segundos
+  setInterval(function() {
+    generarCarta();
+    ajustarDimensiones(); // Ajustar las dimensiones después de generar una carta nueva
+  }, 10000);
 };
-document
-  .getElementById("ajustar-dimensiones")
-  .addEventListener("click", ajustarDimensiones);
-//funcion que genera una carta aleatoria
+
+// Función que genera una carta aleatoria
 function generarCarta() {
-  //defino las variables que contienen los palos y los valores
+  // Definimos las variables que contienen los palos y los valores
   const palos = ["pica", "trebol", "corazon", "diamante"];
   const valores = [
     "2",
@@ -36,42 +48,65 @@ function generarCarta() {
     "K",
     "A"
   ];
-  // se genera un palo aleatorio y se lo asigno a "paloAleatorio"
+
+  // Generamos un palo aleatorio y se lo asignamos a "paloAleatorio"
   const paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
-  // se genera un numero aleatorio y se lo asigno valorAleatorio
+
+  // Generamos un número aleatorio y se lo asignamos a "valorAleatorio"
   const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
-  // obtenemos el elemento que contiene el id 'card'
+
+  // Obtenemos el elemento que contiene el ID 'card'
   const cartaDiv = document.getElementById("card");
-  // obtenemos el elemento donde mostraremos el valor de la carta
+
+  // Obtenemos el elemento donde mostraremos el valor de la carta
   const numeroCentro = document.getElementById("numero-centro");
-  // obtenemos el elemento donde mostraremos el palo de arriba izqda
+
+  // Obtenemos el elemento donde mostraremos el palo de arriba izquierda
   const paloArriba = document.getElementById("palo-arriba");
-  // obtenemos el elemento donde mostraremos el palo de abajo drcha
+
+  // Obtenemos el elemento donde mostraremos el palo de abajo derecha
   const paloAbajo = document.getElementById("palo-abajo");
-  // cambiamos las clases del elemento "cartaDiv" para aplicar estilos con (className)
+
+  // Cambiamos las clases del elemento "cartaDiv" para aplicar estilos con (className)
   cartaDiv.className = `card ${paloAleatorio}`;
-  // establecemos el texto del centro de la carta con "valorAleatorio"
+
+  // Establecemos el texto del centro de la carta con "valorAleatorio"
   numeroCentro.textContent = valorAleatorio;
-  // defino un objeto con los simbolos correspondientes a cada palo
+
+  // Definimos un objeto con los símbolos correspondientes a cada palo
   const simbolos = {
     pica: "♠",
     trebol: "♣",
     corazon: "♥",
     diamante: "♦"
   };
-  //obtenemos el simbolo del paloAleatorio
+
+  // Obtenemos el símbolo del paloAleatorio
   const simbolo = simbolos[paloAleatorio];
 
+  // Establecemos el texto de los elementos "paloArriba" y "paloAbajo" con el símbolo correspondiente
   paloArriba.textContent = simbolo;
   paloAbajo.textContent = simbolo;
+
+  // Ajustar las dimensiones después de generar la carta
+  ajustarDimensiones();
 }
+
+// Función para ajustar las dimensiones de la carta
 function ajustarDimensiones() {
+  // Obtenemos los valores de los inputs de ancho y alto
   const anchoInput = document.getElementById("ancho-carta").value;
   const altoInput = document.getElementById("alto-carta").value;
+
+  // Obtenemos el elemento de la carta
   const cartaDiv = document.getElementById("card");
+
+  // Si se proporciona un valor de ancho, lo aplicamos al estilo del elemento carta
   if (anchoInput) {
     cartaDiv.style.width = `${anchoInput}px`;
   }
+
+  // Si se proporciona un valor de alto, lo aplicamos al estilo del elemento carta
   if (altoInput) {
     cartaDiv.style.height = `${altoInput}px`;
   }
