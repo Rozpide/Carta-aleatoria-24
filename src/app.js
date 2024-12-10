@@ -55,7 +55,7 @@ function generarCarta() {
   // Generamos un número aleatorio y se lo asignamos a "valorAleatorio"
   const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
 
-  // Obtenemos el elemento que contiene el ID 'card'
+  // Obtenemos el elemento que contiene el ID 'card' general
   const cartaDiv = document.getElementById("card");
 
   // Obtenemos el elemento donde mostraremos el valor de la carta
@@ -67,10 +67,10 @@ function generarCarta() {
   // Obtenemos el elemento donde mostraremos el palo de abajo derecha
   const paloAbajo = document.getElementById("palo-abajo");
 
-  // Cambiamos las clases del elemento "cartaDiv" para aplicar estilos con (className)
+  // Se cambia la clases del elemento "cartaDiv" para aplicar estilos con (className: pica, corazon, trebol, diamante)
   cartaDiv.className = `card ${paloAleatorio}`;
 
-  // Establecemos el texto del centro de la carta con "valorAleatorio"
+  // Establecemos el texto del centro de la carta con "valorAleatorio" sera un numero del (2-10, J, Q, K o As)
   numeroCentro.textContent = valorAleatorio;
 
   // Definimos un objeto con los símbolos correspondientes a cada palo

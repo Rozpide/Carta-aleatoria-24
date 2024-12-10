@@ -43,7 +43,7 @@ body {
 #ajustar-dimensiones,
 #boton-generar {
   box-shadow: 7px 8px 5px black;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid black;
 }
 /*estilos aplicados a cartaDiv. Clase generada aleatoriamente*/
@@ -54,4 +54,7 @@ body {
 .pica,
 .trebol {
   color: black;
+}
+input {
+  background-color: yellow;
 }
