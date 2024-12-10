@@ -7,12 +7,16 @@ import "./assets/img/4geeks.ico";
 //se ejecuta la funcion al cargar la pagina
 window.onload = function() {
   //llamamos a la funcion generarCarta para mostrar una carta al cargar
+
   generarCarta();
   // añado un evento al boton con id "boton-generar" para obtener una carta al click
   document
     .getElementById("boton-generar")
     .addEventListener("click", generarCarta);
 };
+document
+  .getElementById("ajustar-dimensiones")
+  .addEventListener("click", ajustarDimensiones);
 //funcion que genera una carta aleatoria
 function generarCarta() {
   //defino las variables que contienen los palos y los valores
@@ -55,11 +59,22 @@ function generarCarta() {
     corazon: "♥",
     diamante: "♦"
   };
-  //obtenemos el simbolo del palo aleatorio
+  //obtenemos el simbolo del paloAleatorio
   const simbolo = simbolos[paloAleatorio];
-  // establecemos el palo tanto de paloArriba , como de abajo con el simbolo aleatorio
+
   paloArriba.textContent = simbolo;
   paloAbajo.textContent = simbolo;
-} //write your code hefunction generarCarta() {
+}
+function ajustarDimensiones() {
+  const anchoInput = document.getElementById("ancho-carta").value;
+  const altoInput = document.getElementById("alto-carta").value;
+  const cartaDiv = document.getElementById("card");
+  if (anchoInput) {
+    cartaDiv.style.width = `${anchoInput}px`;
+  }
+  if (altoInput) {
+    cartaDiv.style.height = `${altoInput}px`;
+  }
+}
 
 console.log("Hello Rigo from the console!");
