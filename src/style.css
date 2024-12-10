@@ -13,6 +13,7 @@ body {
   position: relative;
   background-color: white;
   margin: 20px auto;
+  box-shadow: 7px 8px 5px black;
 }
 .numero,
 .palo {
@@ -20,8 +21,7 @@ body {
   font-size: 8em;
 }
 .numero {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .top-left {
   top: 0px;
@@ -37,6 +37,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/*estilos aplicados a cartaDiv. Clase generada aleatoriamente*/
 .corazon,
 .diamante {
   color: red;
